@@ -58,6 +58,123 @@
 
                         @csrf
 
+                        <!-- Código / Número -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="codigo"
+                                class="form-label fw-bold"
+                            >
+                                Nota Interna N.º
+                            </label>
+
+                            <input
+                                type="text"
+                                id="codigo"
+                                name="codigo"
+                                class="form-control"
+                                placeholder="Ej. NI-2026-001"
+                                value="{{ old('codigo') }}"
+                            >
+
+                        </div>
+
+
+                        <!-- Stock examen -->
+                        <div class="mb-4">
+                            <label
+                                for="stock"
+                                class="form-label fw-bold"
+                            >
+                                Stock disponible
+                            </label>
+
+                            <input
+                                type="number"
+                                id="stock"
+                                name="stock"
+                                class="form-control"
+                                placeholder="Ej. 10"
+                                value="{{ old('stock', 0) }}"
+                                min="0"
+                            >
+
+                            <div class="form-text">
+                                Indique la cantidad disponible.
+                            </div>
+                        </div>
+
+
+                        <!-- Referencia -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="referencia"
+                                class="form-label fw-bold"
+                            >
+                                Ref.
+                            </label>
+
+                            <input
+                                type="text"
+                                id="referencia"
+                                name="referencia"
+                                class="form-control"
+                                placeholder="Ej. Solicitud de estudiante"
+                                value="{{ old('referencia') }}"
+                            >
+
+                        </div>
+
+
+                        <!-- Caso -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="caso"
+                                class="form-label fw-bold"
+                            >
+                                Caso
+                            </label>
+
+                            <select
+                                id="caso"
+                                name="caso"
+                                class="form-select"
+                            >
+
+                                <option value="">
+                                    Seleccione un caso
+                                </option>
+
+                                <option
+                                    value="Revalidación"
+                                    {{ old('caso') == 'Revalidación' ? 'selected' : '' }}
+                                >
+                                    Revalidación
+                                </option>
+
+                                <option
+                                    value="Rezagado"
+                                    {{ old('caso') == 'Rezagado' ? 'selected' : '' }}
+                                >
+                                    Rezagado
+                                </option>
+
+                                <option
+                                    value="Módulo aprobado"
+                                    {{ old('caso') == 'Módulo aprobado' ? 'selected' : '' }}
+                                >
+                                    Módulo aprobado
+                                </option>
+
+                            </select>
+
+                        </div>
+
 
                         <!-- Título -->
 
@@ -117,7 +234,7 @@
                                 href="/notas"
                                 class="btn btn-secondary"
                             >
-                               <- Volver
+                                ← Volver
                             </a>
 
                             <button

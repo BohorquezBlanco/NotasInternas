@@ -9,7 +9,11 @@ class NotaInterna extends Model
     protected $table = 'notas_internas';
 
     protected $fillable = [
+        'codigo',
+        'referencia',
+        'caso',
         'titulo',
-        'prioridad'
+        'prioridad',
+        'stock',
     ];
 }

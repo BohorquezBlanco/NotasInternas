@@ -12,9 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('notas_internas', function (Blueprint $table) {
+
             $table->id();
+
+            // Datos de la nota interna
+            $table->string('codigo')->unique();
+            $table->string('referencia')->nullable();
+            $table->string('caso');
+
+            // Información de la nota
             $table->string('titulo');
             $table->integer('prioridad');
+
             $table->timestamps();
         });
     }
